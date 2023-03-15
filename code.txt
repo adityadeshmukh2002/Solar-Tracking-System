@@ -1,12 +1,16 @@
 //Include the servo motor library
 #include <Servo.h>
+
 //Define the LDR sensor pins
 #define LDR1 A0
 #define LDR2 A1
+
 //Define the error value. You can change it as you like
 #define error 10
+
 //Starting point of the servo motor
 int Spoint =  90;
+
 //Create an object for the servo motor
 Servo servo;
 
@@ -21,6 +25,7 @@ void setup() {
 void loop() {
 //Get the LDR sensor value
   int ldr1 = analogRead(LDR1);
+  
 //Get the LDR sensor value
   int ldr2 = analogRead(LDR2);
 
@@ -39,6 +44,7 @@ void loop() {
       Spoint = ++Spoint;
     }
   }
+  
 //Write values on the servo motor
   servo.write(Spoint);
   delay(80);
